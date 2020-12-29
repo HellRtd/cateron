@@ -78,7 +78,7 @@ class Contact extends Component {
   render() { 
     return ( 
       <section id="contact">
-        <div className="container mb-5 pb-3 pt-4">
+        <div className="container mb-5 pb-4 pt-4">
           <div className="cr-mail-container">
             <div className="cr-title-wrapper d-block px-3">
               <h1 className="cr-title cr-title--highlight font-weight-light">We’d love to hear from you!</h1>

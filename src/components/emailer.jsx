@@ -98,11 +98,11 @@ const FormWithToasts = () => {
                   </div>
                   
                   <div className="row">
-                    <div className="col-12 py-4">
+                    <div className="col-12 py-3">
                       <TextField className="cr-input w-100" multiline rows={4} rowsMax={4} name="message" id="body" label="What's on your mind?" required/>
                     </div>
                   </div>
-                  <div className="text-right mt-4">
+                  <div className="text-right mt-2 mt-md-4">
                     <Button variant="text" color="primary" className="cr-btn mr-3" onClick={resetFunc}>Reset</Button>
                     <Button variant="outlined" color="primary" type='submit' className="cr-btn" >Send</Button>
                   </div>
