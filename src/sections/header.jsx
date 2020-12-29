@@ -92,7 +92,7 @@ class Header extends Component {
         </div>
 
         <Controller>
-          <Scene duration={200} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
+          <Scene duration={100} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={true}>
               <div className="cr-mouse-container">
                 <Link className="cr-mouse cursor-pointer" 
                     to="serv"
