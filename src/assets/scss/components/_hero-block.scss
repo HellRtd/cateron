@@ -1,9 +1,13 @@
 .cr-hero-block{
     position: relative;
     height: 50vh;
-    background: url('../../images/party-food.jpg') no-repeat fixed center/cover;
+    background: url('../../images/party-food.jpg') no-repeat  center/cover;
+    background-attachment: initial;
     z-index: -1;
     @include box-shadow-inset;
+    @include respond-to(medium){
+        background-attachment: fixed;
+    }
     
     &:before{
         content: '';

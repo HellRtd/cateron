@@ -19,12 +19,22 @@
     &--left{
         background-image: url('../../images/party.jpg');
         background-position: left top;
+        // background-size: 1920px;
+        background-attachment: inherit;
+        @include respond-to(medium){  
+            // background-size: cover;    
+            background-attachment: fixed;    
+        }
     }
     
     &--right{
         background-image: url('../../images/short-eats.jpg');
+        // background-size: 1920px;
+        background-attachment: inherit;
         @include respond-to(medium){
-            background-position: right center;            
+            // background-size: cover;            background-position: right center;            
+            background-position: right center;   
+            background-attachment: fixed;    
         }
     }
     a{

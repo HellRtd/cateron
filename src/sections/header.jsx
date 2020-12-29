@@ -8,11 +8,10 @@ class Header extends Component {
   render() { 
     return ( 
       <React.Fragment>
-
         <Controller>
-          <Scene classToggle="active" triggerElement="#serv" triggerHook="onLeave" reverse={true} indicators={false}>
-            <nav class="cr-navbar">
-              <span class="cr-navbar-logo">Cateron</span>
+          <Scene offset={10} classToggle="active" triggerElement="#serv" triggerHook="onLeave" reverse={true} indicators={false}>
+            <nav className="cr-navbar">
+              <span className="cr-navbar-logo">Cateron</span>
               <div className="cr-navbar-action">
                 <a href="tel:0719058004" className="btn btn-theme">GET IN TOUCH</a>
               </div>
@@ -92,7 +91,7 @@ class Header extends Component {
         </div>
 
         <Controller>
-          <Scene duration={100} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
+          <Scene duration={50} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
               <div className="cr-mouse-container">
                 <Link className="cr-mouse cursor-pointer" 
                     to="serv"

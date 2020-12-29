@@ -86,7 +86,6 @@ class Fab extends Component {
     render() {
         return (
             <React.Fragment>
-
                 <nav className={`cr-menu ${this.state.isHover ? 'active' : ''}`} onMouseEnter={this.toggleHover} id="fab_menu">
                             
                             {/* <input type="checkbox" href="#" className="menu-open" name="menu-open" id="menu-open" />
@@ -98,7 +97,7 @@ class Fab extends Component {
                         <OverlayTrigger
                             placement="left"
                             delay={{ show: 80 }}
-                            overlay={<Tooltip id="button-tooltip-2">Back To Top</Tooltip>}
+                            overlay={<Tooltip className="d-none d-md-block">Back To Top</Tooltip>}
                             >
                             <Link className = "cr-menu-item" onClick={this.toggleHover}
                                     activeClass="active"
@@ -119,7 +118,7 @@ class Fab extends Component {
                         <OverlayTrigger
                             placement="left"
                             delay={{ show: 80 }}
-                            overlay={<Tooltip id="button-tooltip-2">Toggle Dark Mode</Tooltip>}
+                            overlay={<Tooltip className="d-none d-md-block">Toggle Dark Mode</Tooltip>}
                             >
                                 {/* className={`cr-icon cr-light-f active-icon ${this.state.isHover ? 'enable' : ''}`} */}
                             <button className={`cr-menu-item ${this.state.isDarkMode ? 'enabled' : ''}`} onClick={this.toggleDarkMode} id="mode_trigger" title="Toggle Dark Mode">
@@ -139,7 +138,7 @@ class Fab extends Component {
                         <OverlayTrigger
                             placement="left"
                             delay={{ show: 80 }}
-                            overlay={<Tooltip id="button-tooltip-2">Contact Us</Tooltip>}
+                            overlay={<Tooltip className="d-none d-md-block">Contact Us</Tooltip>}
                             >
                             <Link className = "cr-menu-item" onClick={this.toggleHover}
                                     activeClass="active"
@@ -181,7 +180,7 @@ class Fab extends Component {
                         <OverlayTrigger
                             placement="left"
                             delay={{ show: 80 }}
-                            overlay={<Tooltip id="button-tooltip-2">Who We Are</Tooltip>}
+                            overlay={<Tooltip className="d-none d-md-block">Who We Are</Tooltip>}
                                 >
                             <Link className = "cr-menu-item" onClick={this.toggleHover}
                                     activeClass="active"
@@ -203,7 +202,7 @@ class Fab extends Component {
                         <OverlayTrigger
                             placement="left"
                             delay={{ show: 80 }}
-                            overlay={<Tooltip id="button-tooltip-2">Our Services</Tooltip>}
+                            overlay={<Tooltip className="d-none d-md-block">Our Services</Tooltip>}
                             >
                             <Link className = "cr-menu-item" onClick={this.toggleHover}
                                     activeClass="active"

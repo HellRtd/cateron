@@ -46,12 +46,14 @@ a {
     @extend %goo;
     @extend %fab-width-height;
     position: fixed;
+    z-index: 9;
+    transform        : translate3d(0, 0, 0);
     right: 0.8rem;
     bottom: 0.8rem;
     box-sizing: border-box;
     font-size: 20px;
-    opacity: 0;
-    @include animation(fadeInUp, 1.2s, $delay: 0.5s);
+    // opacity: 0;
+    // @include animation(fadeInUp, 1.2s, $delay: 0.5s);
     @include respond-to(medium){
         right: 2rem;
         bottom: 2rem;

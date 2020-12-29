@@ -54,10 +54,13 @@ $social-icon-size: 54px;
     &-logo {
         color:$white;
         font-family: $theme_font;
-        font-size: 7.5rem;
+        font-size: 5rem;
         text-shadow: 0 0 0.2rem rgba($font_color_2,0.24), 0 0 0.1rem var(--logo-color),
       -0.1rem 0.1rem 1rem var(--logo-color), 0.1rem 0.1rem 0.6rem var(--logo-color),
       0 -0.2rem 1rem $font_color_2, 0 0.2rem 1rem var(--logo-color);
+      @include respond-to(medium){
+        font-size: 7.5rem;
+      }
     }
     &-footnote{
         letter-spacing: 0.08rem;

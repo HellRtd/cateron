@@ -302,7 +302,7 @@ $hamburger-spacing:8px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 0.7rem 2rem;
     background-color: var(--overlay-color);
     opacity: 0;
@@ -314,7 +314,7 @@ $hamburger-spacing:8px;
     &-logo{
         height: 2.4rem;
         font-family: $theme_font;
-        color: var(--font-color) !important;
+        color: var(--primary-color) !important;
         font-size: 3rem;
         line-height: 1;
         text-shadow: 0 0 0.2rem rgba($font_color_2,0.24), 0 0 0.1rem var(--logo-color),

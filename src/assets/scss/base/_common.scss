@@ -6,10 +6,12 @@ body {
   background-color: var(--bg-color);
   overflow-x: hidden;
   margin: 0;
+  backface-visibility: hidden;
 
   * {
     outline: none !important;
     touch-action: manipulation; // disable double tap zoom on IOs
+    backface-visibility: hidden;
   }
 }
 
