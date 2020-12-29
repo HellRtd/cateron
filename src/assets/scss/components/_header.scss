@@ -38,8 +38,8 @@ $hamburger-spacing:8px;
 
     &__contact-btn {
         position: absolute;
-        right: 1.2rem;
-        top: 1.2rem;
+        right: 1.4rem;
+        top: 1.4rem;
         color: var(--font-color-revert);
         @include material-transition;
 
@@ -58,8 +58,8 @@ $hamburger-spacing:8px;
         }
 
         &-bg {
-            height: 5rem;
-            width: 5rem;
+            height: 6rem;
+            width: 6rem;
             border-radius: 50%;
             background-color: var(--primary-color);
             box-shadow: 0 0 0 0 var(--primary-shadow-color);
@@ -76,7 +76,7 @@ $hamburger-spacing:8px;
             top: 50%;
             left: 50%;
             transform: translate3d(-50%, -53%, 0);
-            font-size: 0.8rem;
+            font-size: 0.86rem;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             line-height: 0.92rem;
