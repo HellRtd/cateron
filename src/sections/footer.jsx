@@ -29,7 +29,7 @@ class FooterSec extends Component {
               </div>
             <div className="d-flex align-items-center my-3">
               <MailOutlineIcon style={{ fontSize: 32 }} className="mr-3"/>
-              <a target="_blank" href="mailto:we.cateron@gmail.com?subject=Customer%20Request%20&body=%0D%0A%0D%0APhone%20Number%3A%0D%0A%0D%0ACheers%2C%0D%0AAnonymous%20Customer" className="base-font--x-large text-white">we.cateron@gmail.com</a>
+              <a target="_blank" rel="noreferrer" href="mailto:we.cateron@gmail.com?subject=Customer%20Request%20&body=%0D%0A%0D%0APhone%20Number%3A%0D%0A%0D%0ACheers%2C%0D%0AAnonymous%20Customer" className="base-font--x-large text-white">we.cateron@gmail.com</a>
             </div> 
             <div className="d-flex align-items-center my-3">
                 <LocationOnOutlinedIcon style={{ fontSize: 32 }} className="mr-3"/>

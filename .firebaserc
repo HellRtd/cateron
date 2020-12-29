@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "cateron-74b4c"
+    "default": "cateron-74b4c",
+    "main": "cateron-74b4c"
   }
 }
