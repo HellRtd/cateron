@@ -1,0 +1,43 @@
+$mouse_color: var(--icon-color-2);
+$scroller-size: 8px;
+
+.cr-mouse {
+    display: inline-block;
+    width: $scroller-size;
+    padding: 8px 14px;
+    height: 40px;
+    border: 2px solid $mouse_color;
+    border-radius: 25px;
+    opacity: 0.5;
+    box-sizing: content-box;
+    @include custom-transition(opacity, 0.8s);
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &-container {
+        position: absolute;
+        right: 0;
+        bottom: 3rem;
+        left: 0;
+        margin: auto;
+        width: 40px;
+        height: 60px;
+        margin: 0 auto;
+        @include animation(fadeOutDown, 1s);
+
+        &.active {
+            @include animation(fadeInUp, 1.5s);
+        }
+    }
+
+    &-scroller {
+        width: $scroller-size;
+        height: $scroller-size + 1;
+        border-radius: 50px;
+        background-color: $mouse_color;
+        opacity: 0;
+        @include animation(scrollMotion, 2s, $fill-mode:none, $anim: linear, $count: infinite)
+    }
+}

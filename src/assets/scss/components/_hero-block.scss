@@ -1,0 +1,32 @@
+.cr-hero-block{
+    position: relative;
+    height: 50vh;
+    background: url('../../images/party-food.jpg') no-repeat fixed center/cover;
+    z-index: -1;
+    @include box-shadow-inset;
+    
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--secondary-color);
+        opacity: 0.6;
+    }
+    
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background:url('../../images/texture.png') repeat;
+        transform: rotate(180deg);
+    }
+    > *{
+        z-index: 1;
+    }
+}

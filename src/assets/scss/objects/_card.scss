@@ -1,0 +1,72 @@
+.cr-card{
+    position: relative;
+    background-color: var(--bg-color);
+    border-radius: $card-radius;
+    padding: 1.6rem 2.8rem;
+    &--cascade-top{
+         top: -100px;
+    }
+    &--cascade-bottom{
+        bottom: -130px;
+    }
+    &--cascade-right{
+        top: -50px;
+        @include respond-to(medium){
+            top: auto;
+            right: -140px;
+        }
+    }
+    &--cascade-left{
+        top: -50px;
+        @include respond-to(medium){
+            top: auto;
+            left: -140px;
+        }
+    }
+    &--trim{
+        padding: 2.4rem 2.6rem;
+        @include respond-to(medium){
+            padding: 4.4rem 4.2rem;
+        }
+        &:before{
+            content: '';
+            @extend %trim-common;
+            height: $trim-size;
+            width: $trim-size;
+            top: $trim-gap;
+            left: $trim-gap;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+        &:after{
+            content: '';
+            @extend %trim-common;
+            height: $trim-size / 1.5;
+            width: $trim-size / 1.5;
+            bottom: $trim-gap;
+            right: $trim-gap;
+            border-top: transparent;
+            border-left: transparent;            
+        }
+    }
+    &--shadow-lvl1{
+        @include box-shadow-lvl-1;
+    }
+    &--shadow-lvl2{
+        @include box-shadow-lvl-2;
+    }
+    &--shadow-lvl3{
+        @include box-shadow-lvl-3;
+    }
+    &--shadow-lvl4{
+        @include box-shadow-lvl-4;
+    }
+    &__text{
+        &--large{
+            font-size: 1.2rem;
+            @include respond-to(medium){
+                font-size: 1.6rem;
+            }
+        }
+    }   
+}

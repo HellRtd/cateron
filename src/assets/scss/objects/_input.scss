@@ -1,0 +1,31 @@
+.cr-input {
+    * {
+        // font-family: $font_family_1 !important;
+    }
+    .MuiInputBase-root{
+        color: var(--font-color-1) !important;
+        font-weight: 600 !important;
+    }
+
+    label {
+        color: var(--muted-color) !important;
+        &.Mui-focused {
+            color: var(--font-color-primary) !important;
+        }
+    }
+    .MuiInput-underline {
+        @include material-transition;
+        &:before {
+            border-color: var(--font-color-3) !important;
+        }
+
+        &:after {
+            border-color: var(--primary-color) !important;
+        }
+
+        &:hover:not(.Mui-disabled):before {
+            border-bottom: 1px solid var(--font-color-3);
+            border-color: var(--primary-color) !important;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+
+:root {
+    --primary-color: #{$theme-color-1};
+    --secondary-color: #{$theme-color-2};
+
+    --overlay-color: #{rgba($theme-bg,0.6)};
+    --secondary-overlay-color: #{rgba($theme-color-2,0.4)};
+    
+    --font-color: #{$font_color_1};
+    --font-color-2: #{$font_color_2};
+    --font-color-3: #{$font_color_3};
+    --font-color-primary: #{$theme-color-1};
+    --font-color-revert: #{$white};
+    --icon-color: #{$font_color_3};
+    --icon-color-2: #{$theme-bg};
+
+    --dark-bg-color: #{$blue-gray-dark};
+    --dark-text-color: #{$theme-bg};
+
+    --bg-color: #{$theme-bg};
+    --logo-color: #{$white};
+    --muted-color: #{$disable_color};
+    --primary-shadow-color: #{rgba($theme-color-1,0.7)};
+    --primary-hover-color:  #{rgba($theme-color-1,0.1)};
+    --primary-hover-color-2:  #{rgba($theme-color-1,1)};
+  }
+  
+  [data-theme="dark"] {
+    --primary-color: #{$theme-dark-color-1};
+    --secondary-color: #{$theme-dark-color-2};
+
+    --overlay-color: #{rgba($theme-dark-bg,0.6)};
+    --secondary-overlay-color: #{rgba($theme-dark-color-2,0.25)};
+
+    --font-color: #{$white};
+    --font-color-2: #{$white};
+    --font-color-3: #{$white};
+    --font-color-primary: #{$white};
+    --font-color-revert: #{$font_color_2};
+    --icon-color: #{$blue-gray-light};
+    --icon-color-2: #{$white};
+
+    --dark-bg-color: #{$theme-color-2};
+    --dark-text-color: #{$theme-bg};
+
+    --bg-color: #{$theme-dark-bg};
+    --logo-color: #{$theme-dark-color-1};
+    --muted-color: #{$gray};
+    --primary-shadow-color: #{rgba($theme-dark-color-1,0.7)};
+    --primary-hover-color:  #{rgba($white,0.1)};
+    --primary-hover-color-2:  #{rgba($font_color_3,1)};
+  }

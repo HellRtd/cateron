@@ -1,0 +1,48 @@
+.cr-img{
+    position: relative;
+    height: 40vh;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+    @include box-shadow-lvl-2($type:inset);
+    
+    @include respond-to(medium){
+        height: 55vh;
+    }
+    @include respond-to(large){
+        background-size: 80%;
+        background-attachment: fixed;
+    }
+    
+    &--left{
+        background-image: url('../../images/party.jpg');
+        background-position: left top;
+    }
+    
+    &--right{
+        background-image: url('../../images/short-eats.jpg');
+        @include respond-to(medium){
+            background-position: right center;            
+        }
+    }
+    a{
+        position: absolute;
+        top: 4px;
+        bottom: auto;
+        right: 8px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $white;
+        opacity: 0.7;
+        @include material-transition;
+        @include respond-to(medium){
+            bottom: 4px;
+            top: auto;
+        }
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

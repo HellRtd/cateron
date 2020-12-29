@@ -1,0 +1,332 @@
+$hamburger-spacing:8px;
+
+%goo-2 {
+    filter: url('#shadowed-goo-2');
+}
+
+%ball-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 100%;
+    position: absolute;
+    color: $white;
+    line-height: 90px;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms;
+    
+}
+
+.cr-header {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/header-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    @include box-shadow-inset;
+    @include animation(fadeIn, 300ms);
+
+    &:before {
+        @extend %pseudo-element-overlay-basics;
+        background-color: var(--secondary-color);
+        opacity: 0.62;
+    }
+
+    &__contact-btn {
+        position: absolute;
+        right: 1.2rem;
+        top: 1.2rem;
+        color: var(--font-color-revert);
+        @include material-transition;
+
+        @include respond-to(small) {
+            right: 3rem;
+            top: 3rem;
+        }
+
+        &:hover {
+            color: var(--primary-color);
+            font-weight: 900;
+
+            .cr-header__contact-btn-bg {
+                background-color: var(--bg-color);
+            }
+        }
+
+        &-bg {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0 0 var(--primary-shadow-color);
+            @include material-transition;
+
+            @include respond-to(small) {
+                height: 8.2rem;
+                width: 8.2rem;
+            }
+        }
+
+        &-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -53%, 0);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            line-height: 0.92rem;
+            text-align: center;
+
+            @include respond-to(small) {
+                line-height: 1.5rem;
+                font-size: 1.25rem;
+            }
+
+            .small {
+                letter-spacing: 0.04rem;
+            }
+        }
+
+
+    }
+
+    &__top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        opacity: 0;
+        @include animation(fadeOutUp, 1s);
+
+        &.active {
+            @include animation(fadeInDown, 1.2s, $delay: 0.6s);
+        }
+    }
+}
+
+.cr-logo {
+    // letter-spacing: 0.03rem;
+    font-family: $theme_font;
+    font-size: calc(100% + 10vw + 8vh);
+    text-align: center;
+    line-height: 85%;
+    color: var(--logo-color);
+    text-shadow: 0 0 0.6rem var(--logo-color), 0 0 1.5rem var(--logo-color),
+        -0.2rem 0.1rem 1rem var(--logo-color), 0.2rem 0.1rem 1rem var(--logo-color),
+        0 -0.5rem 2rem var(--logo-color), 0 0.5rem 3rem var(--logo-color);
+    animation: shine 2s forwards, flicker 3s infinite;
+    user-select: none;
+
+    &-prefix {
+        text-align: center;
+        font-weight: 500;
+        font-size: calc(100% + 0.3vw + 0.6vh);
+        line-height: initial;
+        align-items: center;
+        color: var(--logo-color);
+        letter-spacing: 1.32vw;
+    }
+
+    &-postfix {
+        text-align: center;
+        font-weight: 500;
+        font-size: calc(60% + 0.4vw);
+        line-height: initial;
+        align-items: center;
+        color: var(--logo-color);
+        letter-spacing: 0.4vw;
+    }
+
+    &-container {
+        z-index: 1;
+        opacity: 0;
+        @include animation(fadeIn, 1s, $delay: 1.2s);
+    }
+}
+
+
+
+.cr-header-btn {
+    display: none;
+    z-index: 1;
+    &:checked {
+        transition-timing-function: cubic-bezier(0.935, 0.000, 0.340, 1.330);
+
+        ~.call {
+            transition-duration: 0.3s;
+            transform: translate3d(-16px, 102px, 0);
+        }
+
+        ~.message {
+            transition-duration: 0.4s;
+            transform: translate3d(-102px, 16px, 0);
+        }
+
+        &+.cr-header-btn-label {
+            @include  respond-to(medium){
+            top: 9px;
+            left: 9px;
+            height: 70px;
+            width: 70px;
+            }
+            transition-timing-function: linear;
+            transition-duration: 200ms;
+            transform: scale(0.8, 0.8) translate3d(0, 0, 0) !important;
+            animation: none !important;
+           
+            .hamburger-1 {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) rotate(45deg);
+            }
+
+            .hamburger-2 {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) rotate(-45deg);
+            }
+
+        }
+        &~.cr-header-btn-text{
+            @include material-transition;
+            opacity: 0;
+        }
+    }
+
+    &-container {
+        @extend %goo-2;
+        $width: 90px;
+        $height: 90px;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        width: $width;
+        height: $height;
+        box-sizing: border-box;
+        font-size: 20px;
+        &:hover{
+            .cr-header-btn-bg{
+                display: none;
+            }
+        }
+    }
+    &-placeholder{
+        position: relative;
+    }
+    &-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -53%, 0);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        line-height: 0.92rem;
+        text-align: center;
+        color: var(--font-color-revert);
+        z-index: 2;
+        pointer-events: none;
+        @include respond-to(small) {
+            line-height: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .small {
+            letter-spacing: 0.04rem;
+        }
+    }
+    &-label {
+        @extend %ball-2;
+        
+        z-index: 2;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        transition-duration: 400ms;
+        transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+        color: var(--font-color-revert);
+        height: 90px;
+        width: 90px;
+        @include material-transition;
+
+        @include respond-to(small) {
+            top: -11px;
+            left: -11px;
+            height: 7rem;
+            width: 7rem;
+        }
+
+        
+        cursor: pointer;
+
+        // &:hover {
+        //     transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+        // }
+
+        .hamburger {
+            $width: 25px;
+            $height: 3px;
+            width: $width;
+            height: $height;
+            background: $white;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -$width/2;
+            margin-top: -$height/2;
+            transition: transform 300ms;
+        }
+
+        .hamburger-1 {
+            opacity: 0;
+            transform: translate3d(0, -$hamburger-spacing, 0);
+        }
+
+        .hamburger-2 {
+            opacity: 0;
+            transform: translate3d(0, $hamburger-spacing, 0);
+        }
+    }
+
+    &-item {
+        @extend %ball-2;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+.cr-navbar{
+    @include flex-box(space-between, center);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.7rem 2rem;
+    background-color: var(--overlay-color);
+    opacity: 0;
+    z-index: 2;
+    // @include box-shadow-lvl-1;
+    &.active{
+        @include animation(fadeInDown, 600ms)
+    }
+    &-logo{
+        height: 2.4rem;
+        font-family: $theme_font;
+        color: var(--font-color) !important;
+        font-size: 3rem;
+        line-height: 1;
+        text-shadow: 0 0 0.2rem rgba($font_color_2,0.24), 0 0 0.1rem var(--logo-color),
+        -0.1rem 0.1rem 1rem var(--logo-color), 0.1rem 0.1rem 0.6rem var(--logo-color),
+        0 -0.2rem 1rem $font_color_2, 0 0.2rem 1rem var(--logo-color);
+    }
+}
+
+.flicker {
+    animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+    animation: shine 2s forwards, blink 8s 1s infinite;
+}

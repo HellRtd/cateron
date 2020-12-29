@@ -1,0 +1,52 @@
+//colors & fonts
+$theme-color-1 : #C06C84;
+$theme-color-2 :  #263238;
+$theme-bg : #fefeff;
+
+$theme-dark-color-1 : #eceff1;
+$theme-dark-color-2 :  #111619;
+$theme-dark-bg : #52524E;
+
+$white : #FFFFFF !default;
+$black : #000000 !default;
+$gray : lighten($black, 50%);
+$gray-light : $material-grey-100;
+$blue-gray-light : $material-blue-grey-200;
+$blue-gray-dark : $material-blue-grey-700;
+$theme-highlight-panel: #f3f6f9;
+
+
+$default_font_size: 14px;
+$font_family_1: 'Raleway', sans-serif;
+// $font_family_2: 'Montserrat', sans-serif;
+$theme_font: 'Mr De Haviland', sans-serif;
+$font_color_1: $material-blue-grey-800;
+$font_color_2: $material-blue-grey-600;
+$font_color_3: $material-blue-grey-400; 
+
+$disable_color : $material-grey-300;
+$disable_font_color : $material-grey-400;
+$info_color : #2196f3;
+$danger_color : #dc3545;
+$warning_color : #ff9800;
+$success_color : #28a745;
+
+
+$trim-size : 6.9rem;
+$trim-gap : 4px;
+$card-radius : 4px;
+
+$border-color:lighten($black, 85%);
+// $overlay_color_dark: rgba($theme-color-3, 0.85);
+$overlay_color_light: rgba($white, 0.85);
+
+
+//CHIP COLOR
+$chips_bg: darken($theme-highlight-panel,2%);
+$chips_bg-hover: darken($theme-highlight-panel,5%);
+$chips-danger_text: darken($danger_color,12%) ;
+$chips-danger_bg: lighten($danger_color, 42%);
+$chips-danger_bg-hover: lighten($danger_color, 38%);
+
+
+

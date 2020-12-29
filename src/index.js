@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/scss/styles.scss';
+
+library.add(fab,far,fas)
+
+// const store = createStore(reducer);
+
+ReactDOM.render( 
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>, 
   document.getElementById('root')
 );
 

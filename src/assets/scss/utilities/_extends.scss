@@ -1,0 +1,25 @@
+//extendable snippets
+%pseudo-element-overlay-basics{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+%fixed-overlay{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+%trim-common{
+  position: absolute;
+  border-color: var(--primary-color);
+  border-width: 3px;
+  border-radius: $card-radius 2px;
+  border-style: solid;
+}

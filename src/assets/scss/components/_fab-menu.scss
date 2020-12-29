@@ -1,0 +1,153 @@
+//vars
+$fg:var(--primary-color);
+// $pi:3.14;
+
+//config
+$menu-items:6;
+$open-distance:105px;
+// $opening-angle:$pi*2;
+
+a {
+    color: inherit;
+}
+
+
+%goo {
+    filter: url('#shadowed-goo');
+    // debug 
+    //background:rgba(255,0,0,0.2);
+}
+
+%ball {
+    @include flex-box(center, center);
+    @extend %fab-width-height;
+    background: var(--bg-color);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    border: 2px solid var(--primary-color);
+    text-align: center;
+    // transition: transform ease-out 200ms;
+    @include custom-transition($time: 150ms);
+    user-select: none;
+}
+
+%fab-width-height {
+    height: 60px;
+    width: 60px;
+
+    @include respond-to(medium) {
+        height: 69px;
+        width: 69px;
+    }
+}
+
+.cr-menu {
+    @extend %goo;
+    @extend %fab-width-height;
+    position: fixed;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    box-sizing: border-box;
+    font-size: 20px;
+    opacity: 0;
+    @include animation(fadeInUp, 1.2s, $delay: 0.5s);
+    @include respond-to(medium){
+        right: 2rem;
+        bottom: 2rem;
+    }
+
+    &:hover {
+        height: 250px;
+    }
+
+    &.active{
+        opacity: 1;
+
+        .cr-menu-item {
+            @include box-shadow-lvl-1;
+            transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+            @for $i from 0 through $menu-items {
+
+                &:nth-child(#{$i+1}) {
+                    transition-duration: 50ms+(250ms*$i);
+                    transform: translate3d(0, -70px*$i, 0);
+                    @include respond-to(small){
+                        transform: translate3d(0, -86px*$i, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.cr-menu-item {
+    @extend %ball;
+    cursor: pointer;
+    &:hover {
+        background: var(--bg-color);
+        color: $fg;
+    }
+    &:first-of-type{
+        @include box-shadow-lvl-1;
+    }
+    &.active{
+        z-index: 1;
+
+        .cr-icon{
+            &.active-icon{
+                opacity: 0;
+            }
+            &.inactive-icon{
+                opacity: 1;
+            }
+        }
+    }
+    &:hover{
+        @include respond-to(small){
+            z-index: 1;
+
+        .cr-icon{
+            &.active-icon{
+                opacity: 0;
+            }
+            &.inactive-icon{
+                opacity: 1;
+            }
+        }
+        }
+    }
+
+    .cr-icon{
+        position: absolute;
+        font-size: 2.5rem;
+        @include material-transition;
+        
+        @include respond-to(medium){
+            font-size: 3rem;
+        }
+        &.active-icon{
+            opacity: 1;
+        }
+        &.inactive-icon{
+            opacity: 0;
+        }
+    }
+    &.enabled{
+        
+        .cr-icon{
+            &.active-icon{
+                opacity: 0;
+            }
+            &.inactive-icon{
+                opacity: 1;
+            }
+            
+        } 
+    }
+}
+
+
+

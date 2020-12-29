@@ -1,0 +1,25 @@
+
+.cr-btn{
+    // font-family: $font_family_1 !important;
+    // font-weight: 900 !important;
+    min-width: 100px !important;
+    padding: 0.6rem 1.2rem !important;
+    letter-spacing: 0.06rem;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    @include respond-to(medium){
+        min-width: 140px !important;
+    }
+    &:hover{
+        // background-color: var(--primary-hover-color) !important;
+        // font-weight: 900 !important;
+        // @include box-shadow-lvl-1;
+    }
+}
+
+.btn-pulse{
+    transform: scale(1);
+    @include animation(btnPulse, 2.4s, $anim:ease-in-out, $count: infinite);
+}
+
+

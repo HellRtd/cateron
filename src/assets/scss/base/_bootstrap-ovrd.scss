@@ -1,0 +1,37 @@
+.tooltip{
+    &.show{
+        opacity: 0.98;
+    }
+    .tooltip-inner {
+        max-width: 340px;
+        padding: 6px 10px;
+        background-color: var(--dark-bg-color);
+        color: var(--dark-text-color);
+        border-radius: 8px;
+        font-weight: 600;
+        font-family: $font_family_1;
+        letter-spacing: 0.06rem;
+        @include box-shadow-lvl-1;
+      }
+    .arrow::before {
+        left: 0;
+        border-width: .4rem 0 .4rem .4rem;
+        border-left-color: var(--dark-bg-color);
+    }
+}
+.btn-theme {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--font-color-revert) !important;
+    font-weight: 600;
+}
+
+
+.react-toast-notifications__container{
+    overflow-y: hidden !important;
+    & > div{
+        @include animation(fadeInDown, 0.2s, $delay: 10s);
+    }
+}
+
+
