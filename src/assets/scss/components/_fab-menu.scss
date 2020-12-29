@@ -52,7 +52,7 @@ a {
     bottom: 0.8rem;
     box-sizing: border-box;
     font-size: 20px;
-    // opacity: 0;
+    opacity: 0;
     @include animation(fadeInUp, 1.2s, $delay: 0.5s);
     @include respond-to(medium){
         right: 2rem;
