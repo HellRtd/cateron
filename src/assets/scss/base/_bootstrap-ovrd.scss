@@ -32,6 +32,9 @@
     & > div{
         @include animation(fadeInDown, 0.2s, $delay: 10s);
     }
+    .react-toast-notifications__toast{
+        width: 320px;
+    }
 }
 
 

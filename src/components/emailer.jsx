@@ -51,7 +51,7 @@ const FormWithToasts = () => {
                   
                     addToast('Something went wrong, please try again or call us instead', { 
                         appearance: 'error', 
-                        autoDismiss: true,
+                        // autoDismiss: true,
                         PlacementType: 'bottom-right'                        
                     })
               }, (response) => {
@@ -60,7 +60,7 @@ const FormWithToasts = () => {
         }else{
             addToast('Something went wrong, please ensure that all feilds are filled properly and try again.', { 
                 appearance: 'error', 
-                autoDismiss: true,
+                // autoDismiss: true,
                 PlacementType: 'bottom-right'
                 
             })
