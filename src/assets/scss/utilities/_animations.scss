@@ -1,22 +1,23 @@
 $base-timing: 0.6s;
 %psudo-before{
     &:before{
-        @include animation(fadeInTopLeft, $base-timing*1.2, $delay: $base-timing*0.4);  
+        @include respond-to(medium){
+            opacity: 0;
+            @include animation(fadeInTopLeft, $base-timing*1.2, $delay: $base-timing*0.4);  
+        }
     }
 }
 %psudo-after{
     &:after{
-        @include animation(fadeInBottomRight, $base-timing*1.2, $delay: $base-timing*0.4);
+        @include respond-to(medium){
+            opacity: 0;
+            @include animation(fadeInBottomRight, $base-timing*1.2, $delay: $base-timing*0.4);
+        }
     }
 }
 .cr-animate{
     &--top{
         visibility: hidden;
-        &:before, &:after{
-            opacity: 0;
-        }
-        @include respond-to(medium){
-        }
          &.active{
             visibility: visible;
             @include animation(fadeInUp, $base-timing);
@@ -26,9 +27,6 @@ $base-timing: 0.6s;
     }
     &--left{
         visibility: hidden;
-        &:before, &:after{
-            opacity: 0;
-        }
         @include respond-to(medium){
         }
          &.active{
@@ -43,9 +41,6 @@ $base-timing: 0.6s;
     }
     &--right{
         visibility: hidden;
-        &:before, &:after{
-            opacity: 0;
-        }
         @include respond-to(medium){
         }
          &.active{
@@ -59,9 +54,6 @@ $base-timing: 0.6s;
         }
     }
     &--focus{
-        &:before, &:after{
-            opacity: 0;
-        }
             &.active{
                 @extend %psudo-before;
                 @extend %psudo-after;

@@ -2,12 +2,13 @@
     position: relative;
     height: 50vh;
     background: url('../../images/party-food.jpg') no-repeat  center/cover;
-    background-attachment: initial;
+    // background-attachment: inherit;
+    background-attachment: fixed;
     z-index: -1;
     @include box-shadow-inset;
-    @include respond-to(medium){
-        background-attachment: fixed;
-    }
+    // @include respond-to(medium){
+    //     background-attachment: fixed;
+    // }
     
     &:before{
         content: '';
