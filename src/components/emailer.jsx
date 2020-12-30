@@ -58,7 +58,7 @@ const FormWithToasts = () => {
             });
             e.target.reset();
         }else{
-            addToast('Something went wrong, please ensure that all feilds are filled properly and try again.', { 
+            addToast('Something went wrong, please ensure that all fields are filled properly and try again.', { 
                 appearance: 'error', 
                 autoDismiss: true,
                 PlacementType: 'bottom-right'
@@ -84,7 +84,7 @@ const FormWithToasts = () => {
                       <TextField className="cr-input w-100" id="name" name="from_name" label="Name" required/>
                     </div>
                     <div className="col-md-4 py-3">
-                      <TextField className="cr-input w-100" id="email" name="from_email" label="Email" type="email" required/>
+                      <TextField className="cr-input w-100" id="email" name="email" label="Email" type="email" required/>
                     </div>
                     <div className="col-md-4 py-3">
                       <FormControl className="cr-input w-100" error={errorText}>

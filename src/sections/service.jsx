@@ -50,7 +50,7 @@ render() {
             <Scene duration={2000}  offset={50} classToggle="active" triggerElement="#catering" triggerHook="onEnter" reverse={true} indicators={false}>    
                 <div className="cr-card cr-card--cascade-right cr-card--trim cr-card--shadow-lvl2 order-md-0 cr-animate cr-animate--left">
                   <h1 className="cr-title mb-4">Catering</h1>
-                    <div className="base-font--x-large">We specialize in cakes, pies and pastas. We also have special menues for any special occation. Send us a request with what you need and we'll back to you</div> 
+                    <div className="base-font--x-large">We specialize in cakes, pies and pastas. We also have special menues for any special occation. Send us a request with what you need and we'll get back to you</div> 
                 </div>  
             </Scene>
           </Controller>
