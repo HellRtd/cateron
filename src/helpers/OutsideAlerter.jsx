@@ -40,7 +40,7 @@ export default class OutsideAlerter extends Component {
   
 
   render() {
-    return <div ref={this.setWrapperRef}>{this.props.children}</div>;
+    return <React.Fragment ref={this.setWrapperRef}>{this.props.children}</React.Fragment>;
   }
 
  

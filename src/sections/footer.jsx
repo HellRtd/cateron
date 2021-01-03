@@ -21,7 +21,7 @@ class FooterSec extends Component {
         <div className="py-3 py-md-4 cr-footer">
           <div className="container my-md-4">
             <div className="row">
-            <div className="col-md-4 pt-3 pt-md-4 pb-0 pb-md-4 d-grid align-items-center justify-content-center border-right"><h1 className="cr-footer-logo mb-0">Cateron</h1></div>
+            <div className="col-md-4 pt-3 pt-md-4 pb-0 pb-md-4 d-grid align-items-center justify-content-center border-right"><h1 className="cr-footer-logo mb-0">Cateron.</h1></div>
             <div className="col-md-4 py-0 py-md-4 d-grid align-items-center justify-content-center border-right">
               <div className="d-flex align-items-center my-3">
                 <CallOutlined style={{ fontSize: 32 }} className="mr-3"/>

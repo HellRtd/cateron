@@ -11,7 +11,7 @@ class Header extends Component {
         <Controller>
           <Scene offset={10} classToggle="active" triggerElement="#serv" triggerHook="onLeave" reverse={true} indicators={false}>
             <nav className="cr-navbar">
-              <span className="cr-navbar-logo">Cateron</span>
+              <span className="cr-navbar-logo">Cateron.</span>
               <div className="cr-navbar-action">
                 <a href="tel:0719058004" className="btn btn-theme">GET IN TOUCH</a>
               </div>
@@ -19,19 +19,19 @@ class Header extends Component {
           </Scene>
         </Controller>
         <header id="the_top" className="p-4 mb-4 cr-header">
-        <Controller>
-          <Scene duration={200} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
-            <div className="cr-header__top">
-              <a href="tel:0719058004" className="cr-header__contact-btn">
-              <div className="cr-header__contact-btn-bg btn-pulse"></div>
-              <div className="cr-header__contact-btn-text">
-                <div className="small font-weight-light">
-                  GET IN
+          <Controller>
+            <Scene duration={200} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
+              <div className="cr-header__top">
+                <a href="tel:0719058004" className="cr-header__contact-btn">
+                <div className="cr-header__contact-btn-bg btn-pulse"></div>
+                <div className="cr-header__contact-btn-text">
+                  <div className="small font-weight-light">
+                    GET IN
+                  </div>
+                  <div className="font-weight-bold"> Touch</div>
                 </div>
-                <div className="font-weight-bold"> Touch</div>
+                </a>
               </div>
-              </a>
-            </div>
             </Scene>
           </Controller>
 
@@ -84,14 +84,15 @@ class Header extends Component {
           </svg> */}
 
 
-        <div className="cr-logo-container">
-          {/* <div class="cr-logo-prefix text-uppercase theme">Welcome to the</div> */}
-          <div className="cr-logo"><span className="fast-flicker">Cat</span>er<span className="flicker">on</span>.</div>
-          <div className="cr-logo-postfix text-uppercase">Your memorable events begin with us</div>
-        </div>
+          <div className="cr-logo-container">
+            {/* <div class="cr-logo-prefix text-uppercase theme">Welcome to the</div> */}
+            <div className="cr-logo"><span className="fast-flicker">Cat</span>er<span className="flicker">on</span>.</div>
+            <div className="cr-logo-postfix text-uppercase">Your memorable events begin with us</div>
+          </div>
 
+        </header> 
         <Controller>
-          <Scene duration={50} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
+            <Scene duration={50} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
               <div className="cr-mouse-container">
                 <Link className="cr-mouse cursor-pointer" 
                     to="serv"
@@ -104,9 +105,6 @@ class Header extends Component {
               </div>
             </Scene>
           </Controller>
-
-
-        </header> 
       </React.Fragment>
       
        );
