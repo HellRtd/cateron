@@ -39,13 +39,13 @@ class FooterSec extends Component {
             <div className="col-md-4 py-4 d-flex flex-column align-items-center justify-content-center">
               <h3 className="cr-letter-spacing text-uppercase mb-4 font-weight-bold">Keep in touch</h3>
               <div className="social">
-                <a href="#dummy" className="social__f">
+                <a href="#/" className="social__f">
                   <FontAwesomeIcon icon={['fab', 'facebook-f']}  size="lg" />
                 </a>
-                <a href="#dummy" className="social__fm">                 
+                <a href="#/" className="social__fm">                 
                  <FontAwesomeIcon icon={['fab', 'facebook-messenger']}  size="lg" />
                 </a>
-                <a href="#dummy" className="social__i">
+                <a href="#/" className="social__i">
                  <FontAwesomeIcon icon={['fab', 'instagram']}  size="lg" />
                 </a>
               </div>
@@ -55,8 +55,8 @@ class FooterSec extends Component {
         </div>
 
         <div className="py-1 px-3 d-sm-flex justify-content-sm-between align-items-sm-center text-center">
-          <div className="cr-footer-footnote user-select-none base-font">cateron.lk © 2020</div>
-          <div className="cr-footer-footnote text-uppercase base-font--small"><span className="user-select-none">Designed & Developed By</span><strong> Heshan Rajapaksha</strong></div> 
+          <div className="cr-footer-footnote user-select-none base-font">cateron.lk © 2021</div>
+          <div className="cr-footer-footnote text-uppercase base-font--small"><span className="user-select-none">Designed & Developed By</span><strong className='d-inline-block ml-md-1'>Heshan Rajapaksha</strong></div> 
         </div>
       </footer>
        );
