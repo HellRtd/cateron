@@ -12,7 +12,7 @@ $cr_quote_marker_size: 2.15rem;
         padding-left: 3.8rem;
     }
     &.active{
-        @include animation(fadeIn,1s, $delay:0.8s)
+        @include animation(fadeIn,1s, $delay:0.2s)
     }
 
     &:before{

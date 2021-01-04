@@ -19,7 +19,7 @@ class Crew extends Component {
         </div>
         <article className="cr-hero-block d-flex align-items-center justify-content-center"> 
           <div className="container">
-            <p className="text-white text-center font-weight-light text-italic text-responsive text-responsive--small">We are a company starting from humble beginings dedicated on making your events memorable. It's pretty simple too, you just contact us
+            <p className="text-white text-center font-weight-lighter text-italic text-responsive text-responsive--small">We are a collective of caterers and event planners cennected by our passion for cooking and hosting. Wanna know us more, just contact us
              directly or send an email mentioning what you want and we'll be ready to help. </p>
           </div>
         </article>

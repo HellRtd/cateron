@@ -44,6 +44,10 @@
                 left: $trim-gap;
                 border-right: transparent;
                 border-bottom: transparent;
+                @include respond-to(medium) {
+                    opacity: 0;
+                }
+    
             }
 
             &:after {
@@ -55,6 +59,10 @@
                 right: $trim-gap;
                 border-top: transparent;
                 border-left: transparent;
+                @include respond-to(medium) {
+                    opacity: 0;
+                }
+    
             }
         }
     }

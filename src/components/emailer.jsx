@@ -87,7 +87,7 @@ const FormWithToasts = () => {
                       <TextField className="cr-input w-100" id="email" name="email" label="Email" type="email" required/>
                     </div>
                     <div className="col-md-4 py-3">
-                      <FormControl className="cr-input w-100" error={errorText}>
+                      <FormControl className="cr-input w-100" error={!isPhoneNo}>
                         <InputLabel htmlFor="component-simple">Telephone</InputLabel>
                         <Input id="telephone" inputMode='numeric' pattern="[0-9]*" name="phone_no" inputProps={{ maxLength: 10}} required  onChange={onChange} />
                         <FormHelperText>
