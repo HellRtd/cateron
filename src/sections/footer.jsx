@@ -56,7 +56,7 @@ class FooterSec extends Component {
 
         <div className="py-1 px-3 d-sm-flex justify-content-sm-between align-items-sm-center text-center">
           <div className="cr-footer-footnote user-select-none base-font">cateron.lk © 2021</div>
-          <div className="cr-footer-footnote text-uppercase base-font--small"><span className="user-select-none">Designed & Developed By</span><strong className='d-inline-block ml-md-1'>Heshan Rajapaksha</strong></div> 
+          <div className="cr-footer-footnote text-uppercase base-font--small"><span className="user-select-none">Designed & Developed By</span><strong className='d-inline-block ml-1'>Heshan Rajapaksha</strong></div> 
         </div>
       </footer>
        );
