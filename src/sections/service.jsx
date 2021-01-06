@@ -15,7 +15,7 @@ render() {
         <Controller>
           <Scene duration={1200} offset={100} classToggle="active" triggerElement="#forService" triggerHook="onEnter" reverse={true} indicators={false}>
             <div className="cr-card cr-card--cascade-top cr-card--trim cr-card--shadow-lvl3 cr-animate cr-animate--top mx-3 mx-md-0">
-              <p className="cr-card__text cr-card__text--large m-0 text-center font-weight-light">Cateron is a full-service catering and event planning company that can cater for any ocation. Just hit us up, let us know how we can serve you and just step back and relax as we handle the rest.</p>
+              <p className="cr-card__text cr-card__text--large m-0 text-center font-weight-light">Cateron is a full-service catering and event planning company that can cater for any occasion. Just hit us up, let us know how we can serve you and just step back and relax as we handle the rest.</p>
             </div>
           </Scene>
         </Controller>
