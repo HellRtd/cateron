@@ -13,7 +13,7 @@ class Header extends Component {
             <nav className="cr-navbar">
               <span className="cr-navbar-logo">Cateron.</span>
               <div className="cr-navbar-action">
-                <a href="tel:0719058004" className="btn btn-theme">GET IN TOUCH</a>
+                <a href="tel:0741777066" className="btn btn-theme">GET IN TOUCH</a>
               </div>
             </nav>
           </Scene>
@@ -22,7 +22,7 @@ class Header extends Component {
           <Controller>
             <Scene duration={200} classToggle="active" triggerElement="#the_top" triggerHook="onLeave" reverse={true} indicators={false}>
               <div className="cr-header__top">
-                <a href="tel:0719058004" className="cr-header__contact-btn">
+                <a href="tel:0741777066" className="cr-header__contact-btn">
                 <div className="cr-header__contact-btn-bg btn-pulse"></div>
                 <div className="cr-header__contact-btn-text">
                   <div className="small font-weight-light">

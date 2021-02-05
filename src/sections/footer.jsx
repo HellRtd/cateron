@@ -25,7 +25,7 @@ class FooterSec extends Component {
             <div className="col-md-4 py-0 py-md-4 d-grid align-items-center justify-content-center border-right">
               <div className="d-flex align-items-center my-3">
                 <CallOutlined style={{ fontSize: 32 }} className="mr-3"/>
-                <span className="base-font--x-large">071-905-8004</span>
+                <span className="base-font--x-large">074-177-7066</span>
               </div>
             <div className="d-flex align-items-center my-3">
               <MailOutlineIcon style={{ fontSize: 32 }} className="mr-3"/>
