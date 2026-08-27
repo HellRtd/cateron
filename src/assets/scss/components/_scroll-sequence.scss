@@ -1,0 +1,354 @@
+$sequence-kicker-color: lighten($theme-color-1, 12%);
+
+.cr-sequence {
+  position: relative;
+  // Painted behind the canvas so the pinned stage never flashes white while
+  // the first frames are still decoding.
+  background-color: $theme-color-2;
+
+  &__stage {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  &__canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $theme-color-2;
+  }
+
+  // Full-stage vignette. Subtle on its own -- the per-caption scrim below does
+  // the contrast work -- but it seats the copy in the frame and darkens the
+  // strip under the fixed navbar.
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba($black, 0.45) 0%,
+      rgba($black, 0) 24%,
+      rgba($black, 0) 68%,
+      rgba($black, 0.5) 100%
+    );
+    // Never intercept a click meant for the page underneath.
+    pointer-events: none;
+  }
+
+  // Each beat gets a full-stage slot and is placed by flex alignment rather
+  // than a transform, because GSAP animates `y` on the caption itself and a
+  // centring translate would fight it.
+  &__slot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    // Top padding clears the fixed navbar.
+    padding: 14vh 1.5rem 3.5rem;
+    pointer-events: none;
+
+    &--bottom-left {
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
+    &--mid-right {
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    &--mid-left {
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &__caption {
+    position: relative;
+    margin: 0;
+    max-width: 30rem;
+    color: $white;
+    font-family: $font_family_1;
+    // GSAP owns this from mount onward; the CSS value only stops all four
+    // beats flashing at once before the timeline sets its from-state.
+    opacity: 0;
+    will-change: opacity, transform;
+
+    // Local scrim. The frames are bright and the bright area moves, so each
+    // block carries its own falloff instead of relying on one fixed gradient.
+    &::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      right: -18%;
+      bottom: -60%;
+      left: -18%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba($black, 0.74) 0%,
+        rgba($black, 0.52) 40%,
+        rgba($black, 0) 72%
+      );
+    }
+
+    // Positioned children paint above the positioned ::before by DOM order,
+    // which keeps the scrim behind the text without negative z-index.
+    > * {
+      position: relative;
+    }
+
+    &--center {
+      max-width: 36rem;
+    }
+  }
+
+  &__caption-kicker {
+    display: block;
+    margin-bottom: 1.1rem;
+    color: $sequence-kicker-color;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+
+    // Inline rule, so it sits correctly under both left and right alignment.
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 2.25rem;
+      height: 1px;
+      margin-right: 0.85rem;
+      background-color: currentColor;
+      vertical-align: middle;
+    }
+  }
+
+  &__caption-head {
+    margin: 0 0 1rem;
+    font-size: 2.1rem;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: $white;
+    // Ignored by older engines, and only ever improves the ragged edge.
+    text-wrap: balance;
+
+    .cr-sequence__caption--script & {
+      font-family: $theme_font;
+      font-weight: 400;
+      // The script face carries a small x-height for its point size, so it
+      // needs to run considerably larger than the Raleway heads to read as the
+      // bigger thing on screen.
+      font-size: 4.6rem;
+      line-height: 1.05;
+      letter-spacing: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__caption-body {
+    max-width: 34ch;
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: rgba($white, 0.86);
+
+    .cr-sequence__slot--center & {
+      margin: 0 auto;
+    }
+
+    // text-align alone only ranges the lines inside this box; the box itself is
+    // narrower than the caption, so it needs pushing over to meet the headline.
+    .cr-sequence__slot--mid-right & {
+      margin-left: auto;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    left: 50%;
+    bottom: 2.5rem;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12rem;
+    max-width: 60vw;
+    color: $material-text-dark-secondary;
+    font-family: $font_family_1;
+  }
+
+  &__loader-track {
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: rgba($white, 0.18);
+    overflow: hidden;
+  }
+
+  &__loader-bar {
+    width: 100%;
+    height: 100%;
+    background-color: $theme-color-1;
+    // Scaling a full-width bar keeps the progress update off the layout path.
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 180ms linear;
+  }
+
+  &__loader-text {
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @include respond-to('small') {
+    &__slot {
+      padding: 16vh 3.5rem 4.5rem;
+    }
+
+    &__caption {
+      max-width: 36rem;
+
+      &--center {
+        max-width: 44rem;
+      }
+    }
+
+    &__caption-kicker {
+      font-size: 0.75rem;
+    }
+
+    &__caption-head {
+      font-size: 3.4rem;
+
+      .cr-sequence__caption--script & {
+        font-size: 8rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__caption-body {
+      font-size: 1.05rem;
+
+      .cr-sequence__caption--script & {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include respond-to('large') {
+    &__slot {
+      padding: 16vh 5.5rem 5.5rem;
+    }
+
+    &__caption {
+      max-width: 42rem;
+
+      &--center {
+        max-width: 50rem;
+      }
+    }
+
+    &__caption-head {
+      font-size: 4.6rem;
+
+      .cr-sequence__caption--script & {
+        font-size: 11rem;
+        margin-bottom: 2.25rem;
+      }
+    }
+
+    &__caption-body {
+      font-size: 1.15rem;
+
+      .cr-sequence__caption--script & {
+        font-size: 1.35rem;
+      }
+    }
+  }
+
+  @include respond-to('small', df) {
+    &__loader {
+      bottom: 1.5rem;
+    }
+  }
+}
+
+// Reduced motion gets no scrub, so the beats cannot arrive one at a time.
+// Lay them out as a static stack instead of dropping three quarters of the copy.
+.cr-sequence--static {
+  .cr-sequence__copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 14vh 1.5rem 3rem;
+    background: rgba($black, 0.68);
+  }
+
+  .cr-sequence__slot {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: block;
+    padding: 0;
+    text-align: left;
+  }
+
+  .cr-sequence__caption {
+    max-width: 42rem;
+    opacity: 1;
+    transform: none;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .cr-sequence__caption-kicker {
+    margin-bottom: 0.35rem;
+  }
+
+  .cr-sequence__caption-head {
+    margin-bottom: 0.35rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+
+    .cr-sequence__caption--script & {
+      font-size: 2.2rem;
+    }
+  }
+
+  .cr-sequence__caption-body {
+    margin: 0;
+  }
+
+  @include respond-to('small') {
+    .cr-sequence__copy {
+      padding: 16vh 3.5rem 3.5rem;
+    }
+
+    .cr-sequence__caption-head {
+      font-size: 1.7rem;
+    }
+  }
+}

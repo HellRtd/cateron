@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
+import ScrollSequence from '../components/scrollSequence';
 // import shortEats  from "../assets/images/short-eats.jpg";
 
 
@@ -22,6 +23,7 @@ render() {
       </div> 
     </div>
     <div>
+    <ScrollSequence frameCount={476} scrollDistance="+=300%" scrub={0.5} framesDir="baked_frames" />
     <article className="container-fluid">    
       <div className="row align-items-center">
         <div className="cr-img cr-img--left col-md-5">
